@@ -207,9 +207,35 @@ radio2 = ttk.Radiobutton(window,
                          command = button_func2)
 radio2.pack()
 
+def radio_func():
+    print(check_bool.get())
+    check_bool.set(False)
+
+radio_string = tk.StringVar()
+check_bool = tk.BooleanVar()
+
+#widgets
+ex_radio1 = ttk.Radiobutton(window,
+                            text = 'Radio A',
+                            value = 'A',
+                            command = radio_func,
+                            variable = radio_string)
+ex_radio2 = ttk.Radiobutton(window,
+                            text = 'Radio B',
+                            value = 'B',
+                            command = radio_func,
+                            variable = radio_string)
+ex_check = ttk.Checkbutton(window,
+                           text = 'exercise check',
+                           variable = check_bool,
+                           command = lambda: print(radio_string.get()))
+
+#layout
+ex_radio1.pack()
+ex_radio2.pack()
+ex_check.pack()
+
 #run
 window.mainloop()
 
-#1:12:00
-
-#hi
+#1:33:15
